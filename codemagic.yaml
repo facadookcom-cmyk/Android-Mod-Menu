@@ -11,8 +11,8 @@ workflows:
           echo "Downloading NDK r21e..."
           curl -L -o $CM_BUILD_DIR/ndk.zip https://dl.google.com/android/repository/android-ndk-r21e-darwin-x86_64.zip
           unzip -o $CM_BUILD_DIR/ndk.zip -d $CM_BUILD_DIR
-          echo "ndk.dir=$CM_BUILD_DIR/android-ndk-r21e" > "$CM_BUILD_DIR/android/local.properties"
-          echo "sdk.dir=$ANDROID_SDK_ROOT" >> "$CM_BUILD_DIR/android/local.properties"
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+          echo "ndk.dir=$CM_BUILD_DIR/android-ndk-r21e" >> "$CM_BUILD_DIR/local.properties"
       - name: Build APK
         script: |
           cd $CM_BUILD_DIR
