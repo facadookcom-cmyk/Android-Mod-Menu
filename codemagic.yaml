@@ -8,8 +8,8 @@ workflows:
     scripts:
       - name: Install NDK r21e
         script: |
-          echo "Downloading NDK r21e for Apple Silicon (arm64)..."
-          curl -o $CM_BUILD_DIR/ndk.zip https://dl.google.com/android/repository/android-ndk-r21e-darwin-arm64.zip
+          echo "Downloading NDK r21e..."
+          curl -L -o $CM_BUILD_DIR/ndk.zip https://dl.google.com/android/repository/android-ndk-r21e-darwin-x86_64.zip
           unzip -o $CM_BUILD_DIR/ndk.zip -d $CM_BUILD_DIR
           echo "ndk.dir=$CM_BUILD_DIR/android-ndk-r21e" > "$CM_BUILD_DIR/android/local.properties"
           echo "sdk.dir=$ANDROID_SDK_ROOT" >> "$CM_BUILD_DIR/android/local.properties"
