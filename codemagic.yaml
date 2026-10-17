@@ -2,7 +2,7 @@ workflows:
   android-mod-menu:
     name: Android Mod Menu Build
     max_build_duration: 120
-    instance_type: linux_x2
+    instance_type: mac_mini_m2
     environment:
       java: 11
       ndk: r21e
